@@ -1,0 +1,1486 @@
+var data = {
+    "images": [
+        {
+            "title": "0_0",
+            "elements": [
+                {
+                    "image": "data/hard/4/AE/4/0_0.png",
+                    "title": "AE"
+                },
+                {
+                    "image": "data/hard/4/AFGSA/0_0.png",
+                    "title": "AFGSA"
+                },
+                {
+                    "image": "data/hard/4/albedo/0_0.png",
+                    "title": "albedo"
+                },
+                {
+                    "image": "data/hard/4/depth/0_0.png",
+                    "title": "depth"
+                },
+                {
+                    "image": "data/hard/4/GT/0_0.png",
+                    "title": "GT"
+                },
+                {
+                    "image": "data/hard/4/IF/0_0.png",
+                    "title": "IF"
+                },
+                {
+                    "image": "data/hard/4/isik/0_0.png",
+                    "title": "isik"
+                },
+                {
+                    "image": "data/hard/4/noisy/0_0.png",
+                    "title": "noisy"
+                },
+                {
+                    "image": "data/hard/4/normals/0_0.png",
+                    "title": "normals"
+                },
+                {
+                    "image": "data/hard/4/oidn/0_0.png",
+                    "title": "oidn"
+                },
+                {
+                    "image": "data/hard/4/ours-pixel/0_0.png",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/hard/4/ours-K1/0_0.png",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/hard/4/reference/0_0.png",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "001",
+            "elements": [
+                {
+                    "image": "data/hard/4/input/001.png",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/001.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/001.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/001.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/001.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/001.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/001.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/001.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/001.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/001.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/001.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/001.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/001.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "002",
+            "elements": [
+                {
+                    "image": "data/8spp/input/002.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/002.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/002.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/002.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/002.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/002.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/002.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/002.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/002.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/002.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/002.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/002.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/002.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "003",
+            "elements": [
+                {
+                    "image": "data/8spp/input/003.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/003.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/003.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/003.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/003.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/003.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/003.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/003.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/003.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/003.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/003.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/003.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/003.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "004",
+            "elements": [
+                {
+                    "image": "data/8spp/input/004.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/004.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/004.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/004.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/004.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/004.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/004.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/004.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/004.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/004.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/004.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/004.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/004.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "005",
+            "elements": [
+                {
+                    "image": "data/8spp/input/005.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/005.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/005.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/005.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/005.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/005.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/005.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/005.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/005.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/005.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/005.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/005.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/005.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "006",
+            "elements": [
+                {
+                    "image": "data/8spp/input/006.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/006.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/006.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/006.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/006.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/006.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/006.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/006.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/006.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/006.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/006.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/006.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/006.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "007",
+            "elements": [
+                {
+                    "image": "data/8spp/input/007.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/007.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/007.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/007.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/007.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/007.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/007.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/007.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/007.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/007.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/007.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/007.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/007.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "008",
+            "elements": [
+                {
+                    "image": "data/8spp/input/008.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/008.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/008.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/008.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/008.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/008.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/008.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/008.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/008.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/008.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/008.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/008.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/008.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "009",
+            "elements": [
+                {
+                    "image": "data/8spp/input/009.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/009.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/009.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/009.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/009.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/009.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/009.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/009.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/009.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/009.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/009.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/009.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/009.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "010",
+            "elements": [
+                {
+                    "image": "data/8spp/input/010.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/010.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/010.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/010.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/010.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/010.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/010.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/010.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/010.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/010.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/010.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/010.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/010.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "011",
+            "elements": [
+                {
+                    "image": "data/8spp/input/011.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/011.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/011.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/011.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/011.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/011.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/011.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/011.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/011.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/011.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/011.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/011.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/011.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "012",
+            "elements": [
+                {
+                    "image": "data/8spp/input/012.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/012.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/012.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/012.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/012.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/012.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/012.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/012.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/012.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/012.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/012.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/012.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/012.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "013",
+            "elements": [
+                {
+                    "image": "data/8spp/input/013.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/013.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/013.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/013.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/013.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/013.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/013.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/013.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/013.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/013.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/013.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/013.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/013.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "014",
+            "elements": [
+                {
+                    "image": "data/8spp/input/014.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/014.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/014.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/014.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/014.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/014.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/014.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/014.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/014.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/014.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/014.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/014.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/014.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "015",
+            "elements": [
+                {
+                    "image": "data/8spp/input/015.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/015.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/015.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/015.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/015.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/015.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/015.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/015.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/015.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/015.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/015.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/015.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/015.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "016",
+            "elements": [
+                {
+                    "image": "data/8spp/input/016.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/016.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/016.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/016.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/016.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/016.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/016.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/016.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/016.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/016.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/016.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/016.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/016.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "017",
+            "elements": [
+                {
+                    "image": "data/8spp/input/017.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/017.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/017.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/017.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/017.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/017.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/017.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/017.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/017.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/017.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/017.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/017.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/017.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "018",
+            "elements": [
+                {
+                    "image": "data/8spp/input/018.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/018.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/018.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/018.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/018.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/018.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/018.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/018.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/018.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/018.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/018.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/018.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/018.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "019",
+            "elements": [
+                {
+                    "image": "data/8spp/input/019.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/019.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/019.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/019.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/019.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/019.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/019.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/019.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/019.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/019.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/019.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/019.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/019.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "020",
+            "elements": [
+                {
+                    "image": "data/8spp/input/020.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/020.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/020.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/020.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/020.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/020.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/020.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/020.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/020.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/020.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/020.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/020.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/020.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "021",
+            "elements": [
+                {
+                    "image": "data/8spp/input/021.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/021.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/021.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/021.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/021.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/021.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/021.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/021.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/021.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/021.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/021.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/021.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/021.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "022",
+            "elements": [
+                {
+                    "image": "data/8spp/input/022.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/022.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/022.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/022.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/022.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/022.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/022.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/022.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/022.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/022.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/022.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/022.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/022.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "023",
+            "elements": [
+                {
+                    "image": "data/8spp/input/023.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/023.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/023.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/023.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/023.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/023.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/023.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/023.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/023.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/023.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/023.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/023.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/023.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "024",
+            "elements": [
+                {
+                    "image": "data/8spp/input/024.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/024.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/024.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/024.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/024.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/024.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/024.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/024.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/024.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/024.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/024.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/024.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/024.jpg",
+                    "title": "reference"
+                }
+            ]
+        },
+        {
+            "title": "025",
+            "elements": [
+                {
+                    "image": "data/8spp/input/025.jpg",
+                    "title": "input"
+                },
+                {
+                    "image": "data/8spp/kpcn/025.jpg",
+                    "title": "kpcn"
+                },
+                {
+                    "image": "data/8spp/nbg/025.jpg",
+                    "title": "nbg"
+                },
+                {
+                    "image": "data/8spp/nbg-large/025.jpg",
+                    "title": "nbg-large"
+                },
+                {
+                    "image": "data/8spp/ndle/025.jpg",
+                    "title": "ndle"
+                },
+                {
+                    "image": "data/8spp/onnd/025.jpg",
+                    "title": "onnd"
+                },
+                {
+                    "image": "data/8spp/ours/025.jpg",
+                    "title": "ours"
+                },
+                {
+                    "image": "data/8spp/ours-single/025.jpg",
+                    "title": "ours-single"
+                },
+                {
+                    "image": "data/8spp/sbmc/025.jpg",
+                    "title": "sbmc"
+                },
+                {
+                    "image": "data/8spp/ndle-ms/025.jpg",
+                    "title": "ndle-ms"
+                },
+                {
+                    "image": "data/8spp/ours-pixel/025.jpg",
+                    "title": "ours-pixel"
+                },
+                {
+                    "image": "data/8spp/ours-K1/025.jpg",
+                    "title": "ours-K1"
+                },
+                {
+                    "image": "data/8spp/reference/025.jpg",
+                    "title": "reference"
+                }
+            ]
+        }
+    ]
+}
