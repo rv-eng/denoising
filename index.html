@@ -248,7 +248,7 @@
                   let radio = document.createElement('input');
                   radio.className = "form-check-input switchRadioSpp";
                   radio.type = 'radio';
-                  radio.name = "difficulty"; // Ensure all radios have the same name for grouping
+                  radio.name = "difficulty";
                   radio.id = "switchRadioSpp" + i;
                   radio.value = i;
 
@@ -270,15 +270,6 @@
                   card.appendChild(cardBody);
                   sppRowSelection.appendChild(card);
 
-                  // let label = document.createElement('label');
-                  // let radio = document.createElement('input');
-                  // radio.className = "switchRadioSpp";
-                  // radio.type = 'radio';
-                  // radio.id = "switchRadioSpp" + i;
-                  // radio.value = i;
-                  // label.appendChild(radio);
-                  // content.appendChild(label);
-
                   sppRadios.push(radio);
                 }
 
@@ -298,7 +289,7 @@
                   let radio = document.createElement('input');
                   radio.className = "form-check-input switchRadioEasyHard";
                   radio.type = 'radio';
-                  radio.name = "difficulty2"; // Ensure all radios have the same name for grouping
+                  radio.name = "difficulty2";
                   radio.id = "switchRadioEasyHard" + i;
                   radio.value = i;
 
@@ -315,16 +306,6 @@
                   cardBody.appendChild(formCheck);
                   card.appendChild(cardBody);
                   easyHardRowSelection.appendChild(card);
-
-                  // let label = document.createElement('label');
-                  // let radio = document.createElement('input');
-                  // radio.className = "switchRadioEasyHard";
-                  // radio.type = 'radio';
-                  // radio.id = "switchRadioEasyHard" + i;
-                  // radio.value = i;
-                  // label.appendChild(radio);
-                  // content.appendChild(label);
-
                   easyHardRadios.push(radio);
                 }
 
@@ -367,13 +348,8 @@
                     {
                       imageBoxes[i].style = "display:none;";
                     }
-                    // var radios = document.getElementsByClassName("switchRadioEasyHard");
-                    // for (var i = 0; i < radios.length; i++)
-                    // {
-                    //   radios[i].checked = false;
-                    // }
+
                     easyHardIndex = parseInt(this.value);
-                    // radios[sppIndex].checked = true;
 
                     imageBoxes[sppIndex + (easyHardIndex * 3)].style = 'display:block;';
                   })
@@ -400,36 +376,6 @@
                 new ImageBox(spps[5], h64spp_data['images'] )                
                 spps[0].style = "display:block;";
 
-                // for (let dif in Object.entries(data["difficulty"]))
-                // {
-                //   let diff = dif[0];
-                //   console.log(diff);
-                //   for (let v in Object.entries(dif[1])) {
-                //   }
-                // }
-
-                
-
-                // writeHeader(content, "4SPP")
-                // new ImageBox(content, h4spp_data['images'] );
-                // writeHeader(content, "16SPP")
-                // new ImageBox(content, h16spp_data['images'] );
-                // writeHeader(content, "64SPP")
-                // new ImageBox(content, h64spp_data['images'] );                    
-
-                // var h1 = document.createElement('h1');
-                // h1.textContent = "Hard"
-                // h1.style.display = 'flex';
-                // h1.style.flexDirection = 'column';
-                // h1.style.justifyContent = 'center';
-                // h1.style.alignItems = 'center';
-                // content.appendChild(h1);
-                // writeHeader(content, "4SPP")
-                // new ImageBox(content, e4spp_data['images'] );
-                // writeHeader(content, "16SPP")
-                // new ImageBox(content, e16spp_data['images'] );
-                // writeHeader(content, "64SPP")
-                // new ImageBox(content, e64spp_data['images'] );
             }
 
 </script>

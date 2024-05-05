@@ -78,13 +78,6 @@ window.wheelzoom = (function(){
             img.style.backgroundSize = img.bgWidth+'px '+img.bgHeight+'px';
             img.style.backgroundPosition = (img.bgOffsetX + img.bgPosX)+'px '+ (img.bgOffsetY + img.bgPosY)+'px';
 
-            // // Apply anti-aliasing when not zoomed in too much, and when not viewing at a power of 2.
-            // var globalZoomFactor = img.bgWidth / img.imWidth;
-            // if (globalZoomFactor > 4 || (globalZoomFactor >= 1 && Math.log2(globalZoomFactor) % 1 < 0.001)) {
-            //     img.className = "image-display pixelated";
-            // } else {
-            //     img.className = "image-display";
-            // }
         }
 
         function reset() {
@@ -628,7 +621,7 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
         var content;
         if (typeof(config[i].elements) !== 'undefined') {
             selectorGroup.appendChild(selector);
-            // Recurse
+
             content = document.createElement('div');
             this.buildTreeNode(config[i].elements, level+1, contentNode.children, content);
 
@@ -636,7 +629,6 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
             selector.appendChild(document.createTextNode(config[i].title));
             imageDiv = null;
         } else {
-            // Create image            
             content = document.createElement('img');
             content.className = "image-display pixelated";
             content.setAttribute('data-src', config[i].image);
@@ -657,27 +649,11 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
             imageCompare.appendChild(content);
             imageCompare.appendChild(content2);
 
-            // const slider = imageCompare;
-            // const handle = slider;
-            // function updateBackground(e) {
-            //   const rect = slider.getBoundingClientRect();
-            //   const x = slider.value - rect.left; // Get cursor position relative to slider's left edge.
-            //   const width = rect.width;
-            //   const percent = slider.value;
-            //   console.log(slider.value, rect.left, width, percent);
-            //   slider.style.boxShadow = `0px 0px ${percent}px ${100 - percent}px #0c5d10`;
-            // }
-        
-            // // Listen to mousemove and touchmove events on the handle for better control
-            // handle.addEventListener('click', updateBackground);
-            // handle.addEventListener('touchmove', updateBackground);
-
             imageDiv = document.createElement('div');
             imageDiv.className = "d-flex justify-content-center";
             sliderContainer.appendChild(imageCompare);
             imageDiv.appendChild(sliderContainer);
 
-            //content.src = config[i].image;
             wheelzoom2(content, content2, imageBoxSettings);
             var key = '';
             if (i < 9)
@@ -725,7 +701,6 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
                 nn = "Normals";
             }
 
-            // var n = key+nn;
             var n = nn;
             var textNode = document.createTextNode(n);
             selector.appendChild(textNode);
@@ -745,10 +720,10 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
 
             switch(nn) {
                 case "Ours":
-                    selector.classList.add("ours"); // Add class for 'Ours'
+                    selector.classList.add("ours");
                     break;
                 case "OIDN":
-                    selector.classList.add("oidn"); // Add class for 'Isik'
+                    selector.classList.add("oidn");
                     break;
                 case "AFGSA":
                     selector.classList.add("afgsa");
@@ -756,38 +731,9 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
                 case "Isik":
                     selector.classList.add("isik");
                     break;
-                // Add more cases as needed
             }
 
-
-            // selector.appendChild(document.createElement('br'));
-            // selector.appendChild(document.createTextNode(config[i].version));
             this.selection.length = Math.max(this.selection.length, level+1);
-
-            // // Create inset
-            // var inset = document.createElement('img');
-            // inset.className = "inset pixelated";
-            // inset.style.backgroundImage = "url('" + config[i].image + "')";
-            // inset.style.backgroundRepeat = "no-repeat";
-            // inset.style.border = "0px solid black";
-            // inset.style.width  = (imageBoxSettings.width / config.length-4) + "px";
-            // inset.style.height = (imageBoxSettings.width / config.length-4) + "px";
-            // if (config[i].version != '-') {
-            //     inset.name = config[i].title + '_' + config[i].version;
-            // } else {
-            //     inset.name = config[i].title;
-            // }
-            // var canvas = document.createElement("canvas");
-            // cachedDataUrl = canvas.toDataURL();
-            // inset.src = cachedDataUrl;
-            // insets.push(inset);
-            //
-            // content.addEventListener("mousemove", function(content, insets, event) {
-            //     this.mouseMoveHandler(event, content, insets);
-            // }.bind(this, content, insets));
-            // content.addEventListener("wheel", function(content, insets, event) {
-            //     this.mouseMoveHandler(event, content, insets);
-            // }.bind(this, content, insets));
 
         }
         content.style.display = 'none';
@@ -823,61 +769,7 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
     }
 }
 
-
-// ImageBox.prototype.showContent = function(level, idx) {
-//     // Hide
-//     var bgWidth = 0;
-//     var bgHeight = 0;
-//     var bgPosX = 0;
-//     var bgPosY = 0;
-//     var bgOffsetX = 0;
-//     var bgOffsetY = 0;
-//     var l = 0;
-//     var node = {};
-//     node.children = this.tree;
-//     while (node.children.length > 0 && node.children.length > this.selection[l]) {
-//         node = node.children[this.selection[l]];
-//         node.selector.className = 'selector selector-primary';
-//         node.content.style.display = 'none';
-//         if (l == this.selection.length-1) {
-//             bgWidth =   node.content.bgWidth;
-//             bgHeight =  node.content.bgHeight;
-//             bgPosX =    node.content.bgPosX;
-//             bgPosY =    node.content.bgPosY;
-//             bgOffsetX =  node.content.bgOffsetX;
-//             bgOffsetY =  node.content.bgOffsetY;
-//         }
-//         l += 1;
-//     }
-
-//     this.selection[level] = Math.max(0, idx);
-
-//     // Show
-//     l = 0;
-//     node = {};
-//     node.children = this.tree;
-//     while (node.children.length > 0) {
-//         if (this.selection[l] >= node.children.length)
-//             this.selection[l] = node.children.length - 1;
-//         node = node.children[this.selection[l]];
-//         node.selector.className = 'selector selector-primary active';
-//         node.content.style.display = 'block';
-//         if (l == this.selection.length-1) {
-//             // node.content.bgWidth = bgWidth;
-//             // node.content.bgHeight = bgHeight;
-//             // node.content.bgPosX = bgPosX;
-//             // node.content.bgPosY = bgPosY;
-//             // node.content.bgOffsetX = bgOffsetX;
-//             // node.content.bgOffsetY = bgOffsetY;
-//             // node.content.style.backgroundSize = bgWidth+'px '+bgHeight+'px';
-//             // node.content.style.backgroundPosition = (bgOffsetX + bgPosX)+'px '+ (bgOffsetY + bgPosY)+'px';
-//         }
-//         l += 1;
-//     }
-// }
-
 ImageBox.prototype.showContent = function(level, idx) {
-    // Hide
     var bgWidth = 0;
     var bgHeight = 0;
     var bgPosX = 0;
@@ -889,8 +781,8 @@ ImageBox.prototype.showContent = function(level, idx) {
     node.children = this.tree;
     while (node.children.length > 0 && node.children.length > this.selection[l]) {
         node = node.children[this.selection[l]];
-        node.selector.classList.remove('active'); // Remove active class
-        node.selector.classList.add('selector-primary'); // Ensure primary class is always applied
+        node.selector.classList.remove('active');
+        node.selector.classList.add('selector-primary');
         node.content.style.display = 'none';
         if (l == this.selection.length-1) {
             bgWidth = node.content.bgWidth;
@@ -905,7 +797,6 @@ ImageBox.prototype.showContent = function(level, idx) {
 
     this.selection[level] = Math.max(0, idx);
 
-    // Show
     l = 0;
     node = {};
     node.children = this.tree;
