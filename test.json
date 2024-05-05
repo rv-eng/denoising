@@ -8,8 +8,8 @@ var data = {
                     "title": "AE"
                 },
                 {
-                    "image": "data/hard/4/AFGSA/0_0.png",
-                    "title": "AFGSA"
+                    "image": "data/hard/4/isik/0_0.png",
+                    "title": "isik"
                 },
                 {
                     "image": "data/hard/4/albedo/0_0.png",
@@ -24,12 +24,12 @@ var data = {
                     "title": "GT"
                 },
                 {
-                    "image": "data/hard/4/IF/0_0.png",
-                    "title": "IF"
+                    "image": "data/hard/4/AFGSA/0_0.png",
+                    "title": "AFGSA"
                 },
                 {
-                    "image": "data/hard/4/isik/0_0.png",
-                    "title": "isik"
+                    "image": "data/hard/4/oidn/0_0.png",
+                    "title": "oidn"
                 },
                 {
                     "image": "data/hard/4/noisy/0_0.png",
@@ -40,8 +40,8 @@ var data = {
                     "title": "normals"
                 },
                 {
-                    "image": "data/hard/4/oidn/0_0.png",
-                    "title": "oidn"
+                    "image": "data/hard/4/IF/0_0.png",
+                    "title": "IF"
                 },
                 {
                     "image": "data/hard/4/ours-pixel/0_0.png",

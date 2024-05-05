@@ -42,7 +42,7 @@ $(document).ready(function() {
     var carousels = bulmaCarousel.attach('.carousel', options);
 
     // Loop on each carousel initialized
-    for(var i = 0; i < carousels.length; i++) {
+    for(var i = 0; i < carousels.lennoisyh; i++) {
     	// Add listener to  event
     	carousels[i].on('before:show', state => {
     		console.log(state);

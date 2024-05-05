@@ -26,14 +26,13 @@
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
@@ -63,6 +62,8 @@
 
   <style type="text/css">
     .selector {
+      color: white; /* Set the text color to white when active */
+
       /* font-family: cursive !important; SANS */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -72,16 +73,63 @@
     }
     .selector-top .selector {
       /* color: black; */
+
       background-color: rgb(17, 8, 76);
     }
     .selector-other {
       /* color: black; */
       /* background-color: aqua; */
+
+      align-items: center;
+      padding: 10px;
     }
     .selector-other .selector {
       /* color: black; */
+      color: white; /* Set the text color to white when active */
+
       background-color: rgb(227, 94, 5);
       border-radius: 15%;
+    }
+    
+    .selector-title-other {
+      display:flex;
+
+      /* flex-wrap: nowrap; */
+      justify-content: center;
+    }
+
+    .selector.active {
+      color: white; /* Set the text color to white when active */
+      background-color: blue; /* example for another specific button */
+    }
+
+    .selector.oidn {
+      background-color: rgb(227, 94, 5);
+
+    }    
+
+    .selector.oidn.selector.active {
+      background-color: blue; /* example for another specific button */
+    }    
+
+    .selector.IF.selector.active {
+      background-color: blue; /* example for another specific button */
+    }    
+
+    .selector.afgsa.selector.active {
+      background-color: blue; /* example for another specific button */
+    }    
+
+    .selector.IF {
+      background-color: rgb(227, 94, 5);
+    }
+
+    .selector.afgsa {
+      background-color: rgb(227, 94, 5);
+    }
+
+    .selector.ours {
+        background-color: red; /* specific color for 'Ours' */
     }
 
     * {box-sizing: border-box;}
@@ -114,6 +162,33 @@
       opacity: 0.7;
       border-radius: 50%;
     }
+
+    .form-check-input.switchRadioSpp + .form-check-label {
+        background-color: rgb(17, 8, 76);
+
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .form-check-input.switchRadioEasyHard + .form-check-label {
+        background-color: rgb(17, 8, 76);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+
+    /* Styles for spp and difficulty labels when their associated radio is checked */
+    .form-check-input.switchRadioSpp:checked + .form-check-label {
+      background-color: rgb(227, 94, 5);
+    }
+
+    .form-check-input.switchRadioEasyHard:checked + .form-check-label {
+      background-color: rgb(227, 94, 5);
+
+    }
+
   </style>
 
 
@@ -402,7 +477,7 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
+      <div class="columns is-centered has-text-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Denoising Monte Carlo Renders With Diffusion
             Models</h1>
@@ -433,11 +508,12 @@
                 <a href="https://arxiv.org/pdf/2404.00491.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                      <i class="fa fa-file-pdf-o"></i>
                   </span>
                   <span>Paper</span>
                 </a>
               </span>
+
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2404.00491"
                    class="external-link button is-normal is-rounded is-dark">
@@ -447,6 +523,7 @@
                   <span>arXiv</span>
                 </a>
               </span>
+              
               <!-- can add video later if needed -->
               <!-- Video Link.
               <span class="link-block">
@@ -463,11 +540,12 @@
                 <a href="https://github.com/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-github"></i>
+                      <i class="fa fa-github"></i>
                   </span>
                   <span>Code</span>
                   </a>
               </span>
+
               <!-- Dataset Link. -->
               <!-- <span class="link-block">
                 <a href="https://github.com/"
@@ -486,7 +564,34 @@
   </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <object data="path/to/teaser.pdf" type="application/pdf" width="100%" height="500px">
+      <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="path/to/teaser.pdf">Download PDF</a>.</p>
+    </object>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <object data="teaser.pdf" type="application/pdf" width="100%" height="500px">
+      <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="path/to/teaser.pdf">Download PDF</a>.</p>
+    </object>
+  </div>
+</section>
+ -->
+
+ <section class="section">
+  <div class="container is-max-desktop">
+      <!-- Image link to the PDF document -->
+      <a href="teaser.pdf" target="_blank">
+        <img src="teaser.jpg" alt="Denoising Monte Carlo Renders with Diffusion Models" style="width:100%; height:auto; margin: 0 auto;">
+    </a>
+  </div>
+</section>
+
+
+ <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -546,14 +651,14 @@ show numerous examples where methods preferred by current metrics produce qualit
 </section>
 
 <footer class="footer">
-  <div class="container">
+  <div class="container is-max-desktop content">
     <div class="content has-text-centered">
       <a class="icon-link"
          href="https://arxiv.org/pdf/2404.00491v1.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/rv-eng" class="external-link" disabled>
-        <i class="fab fa-github"></i>
+        <i class="fa fa-github"></i>
       </a>
     </div>
     <div class="columns is-centered">
@@ -566,7 +671,7 @@ show numerous examples where methods preferred by current metrics produce qualit
           </p>
           <p>
              
-            Special thanks to <a href="https://github.com/maknee">Henry Zhu</a> for their invaluable assistance with the Image Viewer. Borrowed base template from <a
+            Webpage and Image Viewer designed by <a href = "https://github.com/rv-eng"> Rahul Vasanth</a>. Special thanks to <a href="https://github.com/maknee">Henry Zhu</a> for their invaluable assistance. Base website obtained from template provided by <a
             href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
             
           </p>

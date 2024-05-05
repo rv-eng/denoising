@@ -49,6 +49,8 @@ body {
 
 .publication-title {
     font-family: 'Google Sans', sans-serif;
+    text-align: center;
+    text-align-last: center;
 }
 
 .publication-authors {
@@ -154,4 +156,19 @@ body {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+img-comparison-slider {
+  --divider-width: 3px;
+  --divider-color: #c0c0c0;
+  --default-handle-opacity: 0.3;
+}
+
+/* .slider-container {
+
+  box-shadow: 15px 0px 25px 0px rgba(255, 0, 0, 1.0), -15px -0px 25px 0px rgba(0, 0, 255, 1.0);
+} */
+
+.slider-container {
+  box-shadow: 15px 0 5px rgba(255, 0, 0, 1.0), -15px 0 5px rgba(0, 0, 255, 1.0);
 }

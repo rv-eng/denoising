@@ -588,11 +588,27 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
     }
 
     parent.appendChild(selectorGroup);
+    row = document.createElement('div');
+    row.className = "row";
+    column1 = document.createElement('div');
+    column1.className = "column";
+    column2 = document.createElement('div');
+    column2.className = "column";
+    column3 = document.createElement('div');
+    column3.className = "column";
+
+    row.appendChild(column1);
+    row.appendChild(column2);
+    row.appendChild(column3);
+    selectorGroup.appendChild(row);
+    column1.className += " selector-title-other";
+    column2.className += " selector-title-other";
+    column3.className += " selector-title-other";
 
     var insets = [];
 
     config.shift();
-    configIFIndex = 4;
+    configIFIndex = 8;
     for (var i = 0; i < config.length; i++) {
         // Create tab
         var selector = document.createElement('div');
@@ -604,7 +620,6 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
         }.bind(this, level, i));
 
         // Add to tabs
-        selectorGroup.appendChild(selector);
 
         // Create content
         var contentNode = {};
@@ -612,6 +627,7 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
         contentNode.selector = selector;
         var content;
         if (typeof(config[i].elements) !== 'undefined') {
+            selectorGroup.appendChild(selector);
             // Recurse
             content = document.createElement('div');
             this.buildTreeNode(config[i].elements, level+1, contentNode.children, content);
@@ -633,14 +649,33 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
             content2.className += " lazy-load";
             content2.slot = "second";
 
+            sliderContainer = document.createElement('div')
+            sliderContainer.className = "slider-container";
+
             imageCompare = document.createElement('img-comparison-slider');
+            imageCompare.className = "slider-example-focus";
             imageCompare.appendChild(content);
             imageCompare.appendChild(content2);
 
+            // const slider = imageCompare;
+            // const handle = slider;
+            // function updateBackground(e) {
+            //   const rect = slider.getBoundingClientRect();
+            //   const x = slider.value - rect.left; // Get cursor position relative to slider's left edge.
+            //   const width = rect.width;
+            //   const percent = slider.value;
+            //   console.log(slider.value, rect.left, width, percent);
+            //   slider.style.boxShadow = `0px 0px ${percent}px ${100 - percent}px #0c5d10`;
+            // }
+        
+            // // Listen to mousemove and touchmove events on the handle for better control
+            // handle.addEventListener('click', updateBackground);
+            // handle.addEventListener('touchmove', updateBackground);
 
             imageDiv = document.createElement('div');
             imageDiv.className = "d-flex justify-content-center";
-            imageDiv.appendChild(imageCompare);
+            sliderContainer.appendChild(imageCompare);
+            imageDiv.appendChild(sliderContainer);
 
             //content.src = config[i].image;
             wheelzoom2(content, content2, imageBoxSettings);
@@ -658,7 +693,73 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
 
             content = imageCompare
 
-            selector.appendChild(document.createTextNode(key+config[i].title));
+            // selector.appendChild(document.createTextNode(key+config[i].title));
+            var nn = config[i].title;
+
+            if (nn === "IF")
+            {
+                nn = "Ours";
+            }
+            if (nn == "isik")
+            {
+                nn = "Isik";
+            }
+            if (nn == "noisy")
+            {
+                nn = "Noisy";
+            }
+            if (nn == "oidn")
+            {
+                nn = "OIDN";
+            }
+            if (nn == "albedo")
+            {
+                nn = "Albedo";
+            }
+            if (nn == "depth")
+            {
+                nn = "Depth";
+            }
+            if (nn == "normals")
+            {
+                nn = "Normals";
+            }
+
+            // var n = key+nn;
+            var n = nn;
+            var textNode = document.createTextNode(n);
+            selector.appendChild(textNode);
+
+            if (i < 3)
+            {
+                column1.appendChild(selector);
+            }
+            else if (i < 5)
+            {
+                column2.appendChild(selector);
+            }
+            else
+            {
+                column3.appendChild(selector);
+            }
+
+            switch(nn) {
+                case "Ours":
+                    selector.classList.add("ours"); // Add class for 'Ours'
+                    break;
+                case "OIDN":
+                    selector.classList.add("oidn"); // Add class for 'Isik'
+                    break;
+                case "AFGSA":
+                    selector.classList.add("afgsa");
+                    break;
+                case "Isik":
+                    selector.classList.add("isik");
+                    break;
+                // Add more cases as needed
+            }
+
+
             // selector.appendChild(document.createElement('br'));
             // selector.appendChild(document.createTextNode(config[i].version));
             this.selection.length = Math.max(this.selection.length, level+1);
@@ -722,6 +823,59 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
     }
 }
 
+
+// ImageBox.prototype.showContent = function(level, idx) {
+//     // Hide
+//     var bgWidth = 0;
+//     var bgHeight = 0;
+//     var bgPosX = 0;
+//     var bgPosY = 0;
+//     var bgOffsetX = 0;
+//     var bgOffsetY = 0;
+//     var l = 0;
+//     var node = {};
+//     node.children = this.tree;
+//     while (node.children.length > 0 && node.children.length > this.selection[l]) {
+//         node = node.children[this.selection[l]];
+//         node.selector.className = 'selector selector-primary';
+//         node.content.style.display = 'none';
+//         if (l == this.selection.length-1) {
+//             bgWidth =   node.content.bgWidth;
+//             bgHeight =  node.content.bgHeight;
+//             bgPosX =    node.content.bgPosX;
+//             bgPosY =    node.content.bgPosY;
+//             bgOffsetX =  node.content.bgOffsetX;
+//             bgOffsetY =  node.content.bgOffsetY;
+//         }
+//         l += 1;
+//     }
+
+//     this.selection[level] = Math.max(0, idx);
+
+//     // Show
+//     l = 0;
+//     node = {};
+//     node.children = this.tree;
+//     while (node.children.length > 0) {
+//         if (this.selection[l] >= node.children.length)
+//             this.selection[l] = node.children.length - 1;
+//         node = node.children[this.selection[l]];
+//         node.selector.className = 'selector selector-primary active';
+//         node.content.style.display = 'block';
+//         if (l == this.selection.length-1) {
+//             // node.content.bgWidth = bgWidth;
+//             // node.content.bgHeight = bgHeight;
+//             // node.content.bgPosX = bgPosX;
+//             // node.content.bgPosY = bgPosY;
+//             // node.content.bgOffsetX = bgOffsetX;
+//             // node.content.bgOffsetY = bgOffsetY;
+//             // node.content.style.backgroundSize = bgWidth+'px '+bgHeight+'px';
+//             // node.content.style.backgroundPosition = (bgOffsetX + bgPosX)+'px '+ (bgOffsetY + bgPosY)+'px';
+//         }
+//         l += 1;
+//     }
+// }
+
 ImageBox.prototype.showContent = function(level, idx) {
     // Hide
     var bgWidth = 0;
@@ -735,15 +889,16 @@ ImageBox.prototype.showContent = function(level, idx) {
     node.children = this.tree;
     while (node.children.length > 0 && node.children.length > this.selection[l]) {
         node = node.children[this.selection[l]];
-        node.selector.className = 'selector selector-primary';
+        node.selector.classList.remove('active'); // Remove active class
+        node.selector.classList.add('selector-primary'); // Ensure primary class is always applied
         node.content.style.display = 'none';
         if (l == this.selection.length-1) {
-            bgWidth =   node.content.bgWidth;
-            bgHeight =  node.content.bgHeight;
-            bgPosX =    node.content.bgPosX;
-            bgPosY =    node.content.bgPosY;
-            bgOffsetX =  node.content.bgOffsetX;
-            bgOffsetY =  node.content.bgOffsetY;
+            bgWidth = node.content.bgWidth;
+            bgHeight = node.content.bgHeight;
+            bgPosX = node.content.bgPosX;
+            bgPosY = node.content.bgPosY;
+            bgOffsetX = node.content.bgOffsetX;
+            bgOffsetY = node.content.bgOffsetY;
         }
         l += 1;
     }
@@ -758,21 +913,17 @@ ImageBox.prototype.showContent = function(level, idx) {
         if (this.selection[l] >= node.children.length)
             this.selection[l] = node.children.length - 1;
         node = node.children[this.selection[l]];
-        node.selector.className = 'selector selector-primary active';
+        node.selector.classList.add('active'); // Add active class for the selected item
+        node.selector.classList.remove('selector-primary'); // Optionally remove the primary class if it conflicts
         node.content.style.display = 'block';
         if (l == this.selection.length-1) {
-            // node.content.bgWidth = bgWidth;
-            // node.content.bgHeight = bgHeight;
-            // node.content.bgPosX = bgPosX;
-            // node.content.bgPosY = bgPosY;
-            // node.content.bgOffsetX = bgOffsetX;
-            // node.content.bgOffsetY = bgOffsetY;
-            // node.content.style.backgroundSize = bgWidth+'px '+bgHeight+'px';
-            // node.content.style.backgroundPosition = (bgOffsetX + bgPosX)+'px '+ (bgOffsetY + bgPosY)+'px';
+            // Apply previously hidden background styles if needed
         }
         l += 1;
     }
 }
+
+
 
 ImageBox.prototype.keyPressHandler = function(event) {
     if (parseInt(event.charCode) == "0".charCodeAt(0)) {
