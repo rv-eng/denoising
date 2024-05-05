@@ -551,7 +551,6 @@ ImageBox.prototype.lazyLoadImages = function() {
             if (entry.isIntersecting) {
                 var image = entry.target;
                 image.src = image.getAttribute('data-src');
-                image.onerror = "this.src='" + image.src + "';"
         
                 image.classList.remove('lazy-load');
                 // wheelzoom(image, imageBoxSettings); // Apply wheelzoom after loading
@@ -563,6 +562,7 @@ ImageBox.prototype.lazyLoadImages = function() {
     });
 
     lazyImages.forEach(function(image) {
+        image.onerror = "this.src='" + image.getAttribute('data-src') + "';"
         imageObserver.observe(image);
     });
 };
