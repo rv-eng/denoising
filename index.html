@@ -43,13 +43,15 @@
   <link rel="stylesheet" href="static/css/hdrviewer.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tobiasroeder/imagebox@1.3.2/dist/imagebox.min.css">
   <script src="https://cdn.jsdelivr.net/gh/tobiasroeder/imagebox@1.3.2/dist/imagebox.min.js"></script>
-
+<!-- 
   <script src="static/js/h4spp.js"></script>
   <script src="static/js/h16spp.js"></script>
   <script src="static/js/h64spp.js"></script>
   <script src="static/js/e4spp.js"></script>
   <script src="static/js/e16spp.js"></script>
-  <script src="static/js/e64spp.js"></script>
+  <script src="static/js/e64spp.js"></script> -->
+  <script src="static/js/reinhard.js"></script>
+  <script src="static/js/gamma.js"></script>
   <script src="static/js/ImageBox.js"></script>
   <script
   defer
@@ -178,6 +180,13 @@
         border-radius: 5px;
     }
 
+    .form-check-input.switchGamma + .form-check-label {
+        background-color: rgb(17, 8, 76);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
 
     /* Styles for spp and difficulty labels when their associated radio is checked */
     .form-check-input.switchRadioSpp:checked + .form-check-label {
@@ -186,7 +195,10 @@
 
     .form-check-input.switchRadioEasyHard:checked + .form-check-label {
       background-color: rgb(227, 94, 5);
+    }
 
+    .form-check-input.switchGamma:checked + .form-check-label {
+      background-color: rgb(227, 94, 5);
     }
 
   </style>
@@ -217,16 +229,16 @@
                   "difficulty": {
                     "easy": [
                       {
-                        "4SPP": e4spp_data['images'],
-                        "16SPP": e16spp_data['images'],
-                        "64SPP": e64spp_data['images'],
+                        "4SPP": e4_gamma_spp_data['images'],
+                        "16SPP": e16_gamma_spp_data['images'],
+                        "64SPP": e64_gamma_spp_data['images'],
                       }
                     ],
                     "hard": [
                       {
-                        "4SPP": h4spp_data['images'],
-                        "16SPP": h16spp_data['images'],
-                        "64SPP": h64spp_data['images'],
+                        "4SPP": h4_gamma_spp_data['images'],
+                        "16SPP": h16_gamma_spp_data['images'],
+                        "64SPP": h64_gamma_spp_data['images'],
                       }
                     ],
                   }
@@ -234,6 +246,12 @@
 
                 var sppRowSelection = document.createElement("div");
                 sppRowSelection.className = "col";
+
+                var sppTitle = document.createElement('h3');
+                sppTitle.textContent = "Samples per Pixel";
+                sppTitle.style.textAlign = "center";
+                sppRowSelection.appendChild(sppTitle);
+
                 var sppRadios = [];
                 for (let i = 0; i < 3; i++)
                 {
@@ -275,6 +293,12 @@
 
                 var easyHardRowSelection = document.createElement("div");
                 easyHardRowSelection.className = "col";
+
+                var testSetTitle = document.createElement('h3');
+                testSetTitle.textContent = "Test Set";
+                testSetTitle.style.textAlign = "center";
+                easyHardRowSelection.appendChild(testSetTitle);
+
                 var easyHardRadios = [];
                 for (let i = 0; i < 2; i++)
                 {
@@ -317,8 +341,10 @@
 
                 var sppRadios = document.getElementsByClassName("switchRadioSpp");
                 var easyHardRadios = document.getElementsByClassName("switchRadioEasyHard");
+                
                 var sppIndex = 0;
                 var easyHardIndex = 0;
+                var gammaRIndex = 0;
                 sppRadios[0].checked = true;
                 easyHardRadios[0].checked = true;
                 for (var i = 0; i < sppRadios.length; i++)
@@ -337,7 +363,7 @@
                     sppIndex = parseInt(this.value);
                     // radios[sppIndex].checked = true;
 
-                    imageBoxes[sppIndex + (easyHardIndex * 3)].style = 'display:block;';
+                    imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
                   })
                 }
                 for (var i = 0; i < easyHardRadios.length; i++)
@@ -351,15 +377,75 @@
 
                     easyHardIndex = parseInt(this.value);
 
-                    imageBoxes[sppIndex + (easyHardIndex * 3)].style = 'display:block;';
+                    imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
                   })
                 }
+
+                var gammaRRowSelection = document.createElement("div");
+                gammaRRowSelection.className = "col";
+
+                var tonemappingTitle = document.createElement('h3');
+                tonemappingTitle.textContent = "Tonemapping";
+                tonemappingTitle.style.textAlign = "center";
+                gammaRRowSelection.appendChild(tonemappingTitle);
+
+                var gammaRRadios = [];
+                for (let i = 0; i < 2; i++)
+                {
+                  let card = document.createElement('div');
+                  card.className = "card";
+                  let cardBody = document.createElement('div');
+                  cardBody.className = "card-body";
+                  
+                  let formCheck = document.createElement('div');
+                  formCheck.className = "form-check";
+                  
+                  let radio = document.createElement('input');
+                  radio.className = "form-check-input switchGamma";
+                  radio.type = 'radio';
+                  radio.name = "difficulty222";
+                  radio.id = "switchGamma" + i;
+                  radio.value = i;
+
+                  let label = document.createElement('label');
+                  label.className = "form-check-label";
+                  label.setAttribute("for", radio.id);
+                  label.textContent = "Gamma";
+                  if (i == 1) {
+                    label.textContent = "Reinhard";
+                  }
+
+                  formCheck.appendChild(radio);
+                  formCheck.appendChild(label);
+                  cardBody.appendChild(formCheck);
+                  card.appendChild(cardBody);
+                  gammaRRowSelection.appendChild(card);
+                  gammaRRadios.push(radio);
+                }
+                gammaRRadios[0].checked = true;
+
+                for (var i = 0; i < gammaRRadios.length; i++)
+                {
+                  gammaRRadios[i].addEventListener('change', function() {
+                    var imageBoxes = document.getElementsByClassName("imageBox");
+                    for (var i = 0; i < imageBoxes.length; i++)
+                    {
+                      imageBoxes[i].style = "display:none;";
+                    }
+
+                    gammaRIndex = parseInt(this.value);
+
+                    imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
+                  })
+                }
+
+                row.appendChild(gammaRRowSelection);
 
                 var spps = [
                 ];
 
                 
-                for (let i = 0; i < 6; i++)
+                for (let i = 0; i < 12; i++)
                 {
                   let imageDiv = document.createElement('div');
                   imageDiv.style = "display:none;";
@@ -368,13 +454,45 @@
                   spps[i] = imageDiv;
                 }
 
-                new ImageBox(spps[0], e4spp_data['images'] ),
-                new ImageBox(spps[1], e16spp_data['images'] ),
-                new ImageBox(spps[2], e64spp_data['images'] ),
-                new ImageBox(spps[3], h4spp_data['images'] ),
-                new ImageBox(spps[4], h16spp_data['images'] ),
-                new ImageBox(spps[5], h64spp_data['images'] )                
+
+                // resetButtonWheelZoom = document.createElement('button');
+                // resetButtonWheelZoom.appendChild(document.createTextNode("Reset!"));
+                // content.appendChild(resetButtonWheelZoom);
+                // resetButtonWheelZoom.onclick = function() {
+                //   var imgs = document.getElementsByClassName('image-display');
+                //   console.log('line461', imgs);
+                //   for (let i = 0; i < imgs.length; i++)
+                //   {
+                //     console.log('??', i, imgs[i]);
+                //     triggerEvent(imgs[i], 'wheelzoom.reset');
+                //   }
+                // };
+
+                // prev
+                // new ImageBox(spps[0], e4spp_data['images'] )
+                // spps[0].style = "display:block;";
+                // new ImageBox(spps[1], e16spp_data['images'] )
+                // new ImageBox(spps[2], e64spp_data['images'] )
+                // new ImageBox(spps[3], h4spp_data['images'] )
+                // new ImageBox(spps[4], h16spp_data['images'] )
+                // new ImageBox(spps[5], h64spp_data['images'] )    
+
+                new ImageBox(spps[0], e4_gamma_spp_data['images'] )
                 spps[0].style = "display:block;";
+                new ImageBox(spps[1], e16_gamma_spp_data['images'] )
+                new ImageBox(spps[2], e64_gamma_spp_data['images'] )
+                new ImageBox(spps[3], h4_gamma_spp_data['images'] )
+                new ImageBox(spps[4], h16_gamma_spp_data['images'] )
+                new ImageBox(spps[5], h64_gamma_spp_data['images'] )       
+                         
+                new ImageBox(spps[6], e4_reinhard_spp_data['images'] )                
+                new ImageBox(spps[7], e16_reinhard_spp_data['images'] )                
+                new ImageBox(spps[8], e64_reinhard_spp_data['images'] )                
+                new ImageBox(spps[9], h4_reinhard_spp_data['images'] )                
+                new ImageBox(spps[10], h16_reinhard_spp_data['images'] )                
+                new ImageBox(spps[11], h64_reinhard_spp_data['images'] )   
+
+              
 
             }
 

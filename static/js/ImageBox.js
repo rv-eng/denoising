@@ -225,6 +225,8 @@ window.wheelzoom = (function(){
     }
 }());
 
+var resetButtonWheelZoom = document.createElement('button');
+
 window.wheelzoom2 = (function(){
 
     var canvas = document.createElement('canvas');
@@ -236,6 +238,7 @@ window.wheelzoom2 = (function(){
         var height;
         var previousEvent;
         var cachedDataUrl;
+        resetButtonWheelZoom.addEventListener('onclick', reset);            
 
         function setSrcToBackground(img) {
             img.style.backgroundImage = 'url("'+img.src+'")';
@@ -302,6 +305,7 @@ window.wheelzoom2 = (function(){
         }
 
         function reset() {
+            console.log('reset!!')
 
             if (canvas) {
                 var zoomFactor = 2*Math.min(canvas.width / img.imWidth, canvas.height / img.imHeight);
