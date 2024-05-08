@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Denoising Paper">
+  <meta name="description" content="Denoising Paper">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Denoising Monte Carlo Renders with Diffusion Models</title>
@@ -20,15 +20,13 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -38,46 +36,41 @@
   <script src="./static/js/index.js"></script>
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="static/css/hdrviewer.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tobiasroeder/imagebox@1.3.2/dist/imagebox.min.css">
   <script src="https://cdn.jsdelivr.net/gh/tobiasroeder/imagebox@1.3.2/dist/imagebox.min.js"></script>
-<!-- 
-  <script src="static/js/h4spp.js"></script>
-  <script src="static/js/h16spp.js"></script>
-  <script src="static/js/h64spp.js"></script>
-  <script src="static/js/e4spp.js"></script>
-  <script src="static/js/e16spp.js"></script>
-  <script src="static/js/e64spp.js"></script> -->
+
   <script src="static/js/reinhard.js"></script>
   <script src="static/js/gamma.js"></script>
   <script src="static/js/ImageBox.js"></script>
-  <script
-  defer
-  src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
-></script>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
-/>
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
 
   <style type="text/css">
     .selector {
-      color: white; /* Set the text color to white when active */
+      color: white;
+      /* Set the text color to white when active */
 
       /* font-family: cursive !important; SANS */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     .selector-top {
       /* color: black; */
       background-color: rgb(17, 8, 76);
     }
+
     .selector-top .selector {
       /* color: black; */
 
       background-color: rgb(17, 8, 76);
     }
+
     .selector-other {
       /* color: black; */
       /* background-color: aqua; */
@@ -85,42 +78,49 @@
       align-items: center;
       padding: 10px;
     }
+
     .selector-other .selector {
       /* color: black; */
-      color: white; /* Set the text color to white when active */
+      color: white;
+      /* Set the text color to white when active */
 
       background-color: rgb(227, 94, 5);
       border-radius: 15%;
     }
-    
+
     .selector-title-other {
-      display:flex;
+      display: flex;
 
       /* flex-wrap: nowrap; */
       justify-content: center;
     }
 
     .selector.active {
-      color: white; /* Set the text color to white when active */
-      background-color: blue; /* example for another specific button */
+      color: white;
+      /* Set the text color to white when active */
+      background-color: blue;
+      /* example for another specific button */
     }
 
     .selector.oidn {
       background-color: rgb(227, 94, 5);
 
-    }    
+    }
 
     .selector.oidn.selector.active {
-      background-color: blue; /* example for another specific button */
-    }    
+      background-color: blue;
+      /* example for another specific button */
+    }
 
     .selector.IF.selector.active {
-      background-color: blue; /* example for another specific button */
-    }    
+      background-color: blue;
+      /* example for another specific button */
+    }
 
     .selector.afgsa.selector.active {
-      background-color: blue; /* example for another specific button */
-    }    
+      background-color: blue;
+      /* example for another specific button */
+    }
 
     .selector.IF {
       background-color: rgb(227, 94, 5);
@@ -131,14 +131,18 @@
     }
 
     .selector.ours {
-        background-color: red; /* specific color for 'Ours' */
+      background-color: red;
+      /* specific color for 'Ours' */
     }
 
-    * {box-sizing: border-box;}
+    * {
+      box-sizing: border-box;
+    }
 
     .img-comp-container {
       position: relative;
-      height: 200px; /*should be the same height as the images*/
+      height: 200px;
+      /*should be the same height as the images*/
     }
 
     .img-comp-img {
@@ -165,42 +169,41 @@
       border-radius: 50%;
     }
 
-    .form-check-input.switchRadioSpp + .form-check-label {
-        background-color: rgb(17, 8, 76);
+    .form-check-input.switchRadioSpp+.form-check-label {
+      background-color: rgb(17, 8, 76);
 
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
     }
 
-    .form-check-input.switchRadioEasyHard + .form-check-label {
-        background-color: rgb(17, 8, 76);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
+    .form-check-input.switchRadioEasyHard+.form-check-label {
+      background-color: rgb(17, 8, 76);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
     }
 
-    .form-check-input.switchGamma + .form-check-label {
-        background-color: rgb(17, 8, 76);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
+    .form-check-input.switchGamma+.form-check-label {
+      background-color: rgb(17, 8, 76);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
     }
 
 
     /* Styles for spp and difficulty labels when their associated radio is checked */
-    .form-check-input.switchRadioSpp:checked + .form-check-label {
+    .form-check-input.switchRadioSpp:checked+.form-check-label {
       background-color: rgb(227, 94, 5);
     }
 
-    .form-check-input.switchRadioEasyHard:checked + .form-check-label {
+    .form-check-input.switchRadioEasyHard:checked+.form-check-label {
       background-color: rgb(227, 94, 5);
     }
 
-    .form-check-input.switchGamma:checked + .form-check-label {
+    .form-check-input.switchGamma:checked+.form-check-label {
       background-color: rgb(227, 94, 5);
     }
-
   </style>
 
 
@@ -212,294 +215,283 @@
       content.appendChild(h1);
     }
     function setup() {
-                content = document.getElementById("content");
+      content = document.getElementById("content");
 
-                // var help = document.createElement('div');
-                // help.appendChild(document.createTextNode("Use mouse wheel to zoom in/out, click and drag to pan. Press keys [1], [2], ... , [W], [E] to switch between each method."));
+      // var help = document.createElement('div');
+      // help.appendChild(document.createTextNode("Use mouse wheel to zoom in/out, click and drag to pan. Press keys [1], [2], ... , [W], [E] to switch between each method."));
 
-                var h1 = document.createElement('h1');
-                h1.textContent = "Image Viewer"
-                h1.style.display = 'flex';
-                h1.style.flexDirection = 'column';
-                h1.style.justifyContent = 'center';
-                h1.style.alignItems = 'center';
-                content.appendChild(h1);
+      var h1 = document.createElement('h1');
+      h1.textContent = "Image Viewer"
+      h1.style.display = 'flex';
+      h1.style.flexDirection = 'column';
+      h1.style.justifyContent = 'center';
+      h1.style.alignItems = 'center';
+      content.appendChild(h1);
 
-                var data = {
-                  "difficulty": {
-                    "easy": [
-                      {
-                        "4SPP": e4_gamma_spp_data['images'],
-                        "16SPP": e16_gamma_spp_data['images'],
-                        "64SPP": e64_gamma_spp_data['images'],
-                      }
-                    ],
-                    "hard": [
-                      {
-                        "4SPP": h4_gamma_spp_data['images'],
-                        "16SPP": h16_gamma_spp_data['images'],
-                        "64SPP": h64_gamma_spp_data['images'],
-                      }
-                    ],
-                  }
-                };
-
-                var sppRowSelection = document.createElement("div");
-                sppRowSelection.className = "col";
-
-                var sppTitle = document.createElement('h3');
-                sppTitle.textContent = "Samples per Pixel";
-                sppTitle.style.textAlign = "center";
-                sppRowSelection.appendChild(sppTitle);
-
-                var sppRadios = [];
-                for (let i = 0; i < 3; i++)
-                {
-                  let card = document.createElement('div');
-                  card.className = "card";
-                  let cardBody = document.createElement('div');
-                  cardBody.className = "card-body";
-                  
-                  let formCheck = document.createElement('div');
-                  formCheck.className = "form-check";
-                  
-                  let radio = document.createElement('input');
-                  radio.className = "form-check-input switchRadioSpp";
-                  radio.type = 'radio';
-                  radio.name = "difficulty";
-                  radio.id = "switchRadioSpp" + i;
-                  radio.value = i;
-
-                  let label = document.createElement('label');
-                  label.className = "form-check-label";
-                  label.setAttribute("for", radio.id);
-                  label.textContent = "4spp";
-                  if (i == 1) {
-                    label.textContent = "16spp";
-                  }
-                  if (i == 2) {
-                    label.textContent = "64spp";
-                  }
-
-                  // Append elements
-                  formCheck.appendChild(radio);
-                  formCheck.appendChild(label);
-                  cardBody.appendChild(formCheck);
-                  card.appendChild(cardBody);
-                  sppRowSelection.appendChild(card);
-
-                  sppRadios.push(radio);
-                }
-
-                var easyHardRowSelection = document.createElement("div");
-                easyHardRowSelection.className = "col";
-
-                var testSetTitle = document.createElement('h3');
-                testSetTitle.textContent = "Test Set";
-                testSetTitle.style.textAlign = "center";
-                easyHardRowSelection.appendChild(testSetTitle);
-
-                var easyHardRadios = [];
-                for (let i = 0; i < 2; i++)
-                {
-                  let card = document.createElement('div');
-                  card.className = "card";
-                  let cardBody = document.createElement('div');
-                  cardBody.className = "card-body";
-                  
-                  let formCheck = document.createElement('div');
-                  formCheck.className = "form-check";
-                  
-                  let radio = document.createElement('input');
-                  radio.className = "form-check-input switchRadioEasyHard";
-                  radio.type = 'radio';
-                  radio.name = "difficulty2";
-                  radio.id = "switchRadioEasyHard" + i;
-                  radio.value = i;
-
-                  let label = document.createElement('label');
-                  label.className = "form-check-label";
-                  label.setAttribute("for", radio.id);
-                  label.textContent = "Easy";
-                  if (i == 1) {
-                    label.textContent = "Hard";
-                  }
-
-                  formCheck.appendChild(radio);
-                  formCheck.appendChild(label);
-                  cardBody.appendChild(formCheck);
-                  card.appendChild(cardBody);
-                  easyHardRowSelection.appendChild(card);
-                  easyHardRadios.push(radio);
-                }
-
-                var row = document.createElement("div");
-                row.className = "row";
-                content.appendChild(row);
-                row.appendChild(sppRowSelection);
-                row.appendChild(easyHardRowSelection);
-
-                var sppRadios = document.getElementsByClassName("switchRadioSpp");
-                var easyHardRadios = document.getElementsByClassName("switchRadioEasyHard");
-                
-                var sppIndex = 0;
-                var easyHardIndex = 0;
-                var gammaRIndex = 0;
-                sppRadios[0].checked = true;
-                easyHardRadios[0].checked = true;
-                for (var i = 0; i < sppRadios.length; i++)
-                {
-                  sppRadios[i].addEventListener('change', function() {
-                    var imageBoxes = document.getElementsByClassName("imageBox");
-                    for (var i = 0; i < imageBoxes.length; i++)
-                    {
-                      imageBoxes[i].style = "display:none;";
-                    }
-                    // var radios = document.getElementsByClassName("switchRadioSpp");
-                    // for (var i = 0; i < radios.length; i++)
-                    // {
-                    //   radios[i].checked = false;
-                    // }
-                    sppIndex = parseInt(this.value);
-                    // radios[sppIndex].checked = true;
-
-                    imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
-                  })
-                }
-                for (var i = 0; i < easyHardRadios.length; i++)
-                {
-                  easyHardRadios[i].addEventListener('change', function() {
-                    var imageBoxes = document.getElementsByClassName("imageBox");
-                    for (var i = 0; i < imageBoxes.length; i++)
-                    {
-                      imageBoxes[i].style = "display:none;";
-                    }
-
-                    easyHardIndex = parseInt(this.value);
-
-                    imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
-                  })
-                }
-
-                var gammaRRowSelection = document.createElement("div");
-                gammaRRowSelection.className = "col";
-
-                var tonemappingTitle = document.createElement('h3');
-                tonemappingTitle.textContent = "Tonemapping";
-                tonemappingTitle.style.textAlign = "center";
-                gammaRRowSelection.appendChild(tonemappingTitle);
-
-                var gammaRRadios = [];
-                for (let i = 0; i < 2; i++)
-                {
-                  let card = document.createElement('div');
-                  card.className = "card";
-                  let cardBody = document.createElement('div');
-                  cardBody.className = "card-body";
-                  
-                  let formCheck = document.createElement('div');
-                  formCheck.className = "form-check";
-                  
-                  let radio = document.createElement('input');
-                  radio.className = "form-check-input switchGamma";
-                  radio.type = 'radio';
-                  radio.name = "difficulty222";
-                  radio.id = "switchGamma" + i;
-                  radio.value = i;
-
-                  let label = document.createElement('label');
-                  label.className = "form-check-label";
-                  label.setAttribute("for", radio.id);
-                  label.textContent = "Gamma";
-                  if (i == 1) {
-                    label.textContent = "Reinhard";
-                  }
-
-                  formCheck.appendChild(radio);
-                  formCheck.appendChild(label);
-                  cardBody.appendChild(formCheck);
-                  card.appendChild(cardBody);
-                  gammaRRowSelection.appendChild(card);
-                  gammaRRadios.push(radio);
-                }
-                gammaRRadios[0].checked = true;
-
-                for (var i = 0; i < gammaRRadios.length; i++)
-                {
-                  gammaRRadios[i].addEventListener('change', function() {
-                    var imageBoxes = document.getElementsByClassName("imageBox");
-                    for (var i = 0; i < imageBoxes.length; i++)
-                    {
-                      imageBoxes[i].style = "display:none;";
-                    }
-
-                    gammaRIndex = parseInt(this.value);
-
-                    imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
-                  })
-                }
-
-                row.appendChild(gammaRRowSelection);
-
-                var spps = [
-                ];
-
-                
-                for (let i = 0; i < 12; i++)
-                {
-                  let imageDiv = document.createElement('div');
-                  imageDiv.style = "display:none;";
-                  imageDiv.className = "imageBox";
-                  content.appendChild(imageDiv);
-                  spps[i] = imageDiv;
-                }
-
-
-                // resetButtonWheelZoom = document.createElement('button');
-                // resetButtonWheelZoom.appendChild(document.createTextNode("Reset!"));
-                // content.appendChild(resetButtonWheelZoom);
-                // resetButtonWheelZoom.onclick = function() {
-                //   var imgs = document.getElementsByClassName('image-display');
-                //   console.log('line461', imgs);
-                //   for (let i = 0; i < imgs.length; i++)
-                //   {
-                //     console.log('??', i, imgs[i]);
-                //     triggerEvent(imgs[i], 'wheelzoom.reset');
-                //   }
-                // };
-
-                // prev
-                // new ImageBox(spps[0], e4spp_data['images'] )
-                // spps[0].style = "display:block;";
-                // new ImageBox(spps[1], e16spp_data['images'] )
-                // new ImageBox(spps[2], e64spp_data['images'] )
-                // new ImageBox(spps[3], h4spp_data['images'] )
-                // new ImageBox(spps[4], h16spp_data['images'] )
-                // new ImageBox(spps[5], h64spp_data['images'] )    
-
-                new ImageBox(spps[0], e4_gamma_spp_data['images'] )
-                spps[0].style = "display:block;";
-                new ImageBox(spps[1], e16_gamma_spp_data['images'] )
-                new ImageBox(spps[2], e64_gamma_spp_data['images'] )
-                new ImageBox(spps[3], h4_gamma_spp_data['images'] )
-                new ImageBox(spps[4], h16_gamma_spp_data['images'] )
-                new ImageBox(spps[5], h64_gamma_spp_data['images'] )       
-                         
-                new ImageBox(spps[6], e4_reinhard_spp_data['images'] )                
-                new ImageBox(spps[7], e16_reinhard_spp_data['images'] )                
-                new ImageBox(spps[8], e64_reinhard_spp_data['images'] )                
-                new ImageBox(spps[9], h4_reinhard_spp_data['images'] )                
-                new ImageBox(spps[10], h16_reinhard_spp_data['images'] )                
-                new ImageBox(spps[11], h64_reinhard_spp_data['images'] )   
-
-              
-
+      var data = {
+        "difficulty": {
+          "easy": [
+            {
+              "4SPP": e4_gamma_spp_data['images'],
+              "16SPP": e16_gamma_spp_data['images'],
+              "64SPP": e64_gamma_spp_data['images'],
             }
+          ],
+          "hard": [
+            {
+              "4SPP": h4_gamma_spp_data['images'],
+              "16SPP": h16_gamma_spp_data['images'],
+              "64SPP": h64_gamma_spp_data['images'],
+            }
+          ],
+        }
+      };
 
-</script>
+      var sppRowSelection = document.createElement("div");
+      sppRowSelection.className = "col";
+
+      var sppTitle = document.createElement('h3');
+      sppTitle.textContent = "Samples per Pixel";
+      sppTitle.style.textAlign = "center";
+      sppRowSelection.appendChild(sppTitle);
+
+      var sppRadios = [];
+      for (let i = 0; i < 3; i++) {
+        let card = document.createElement('div');
+        card.className = "card";
+        let cardBody = document.createElement('div');
+        cardBody.className = "card-body";
+
+        let formCheck = document.createElement('div');
+        formCheck.className = "form-check";
+
+        let radio = document.createElement('input');
+        radio.className = "form-check-input switchRadioSpp";
+        radio.type = 'radio';
+        radio.name = "difficulty";
+        radio.id = "switchRadioSpp" + i;
+        radio.value = i;
+
+        let label = document.createElement('label');
+        label.className = "form-check-label";
+        label.setAttribute("for", radio.id);
+        label.textContent = "4spp";
+        if (i == 1) {
+          label.textContent = "16spp";
+        }
+        if (i == 2) {
+          label.textContent = "64spp";
+        }
+
+        // Append elements
+        formCheck.appendChild(radio);
+        formCheck.appendChild(label);
+        cardBody.appendChild(formCheck);
+        card.appendChild(cardBody);
+        sppRowSelection.appendChild(card);
+
+        sppRadios.push(radio);
+      }
+
+      var easyHardRowSelection = document.createElement("div");
+      easyHardRowSelection.className = "col";
+
+      var testSetTitle = document.createElement('h3');
+      testSetTitle.textContent = "Test Set";
+      testSetTitle.style.textAlign = "center";
+      easyHardRowSelection.appendChild(testSetTitle);
+
+      var easyHardRadios = [];
+      for (let i = 0; i < 2; i++) {
+        let card = document.createElement('div');
+        card.className = "card";
+        let cardBody = document.createElement('div');
+        cardBody.className = "card-body";
+
+        let formCheck = document.createElement('div');
+        formCheck.className = "form-check";
+
+        let radio = document.createElement('input');
+        radio.className = "form-check-input switchRadioEasyHard";
+        radio.type = 'radio';
+        radio.name = "difficulty2";
+        radio.id = "switchRadioEasyHard" + i;
+        radio.value = i;
+
+        let label = document.createElement('label');
+        label.className = "form-check-label";
+        label.setAttribute("for", radio.id);
+        label.textContent = "Easy";
+        if (i == 1) {
+          label.textContent = "Hard";
+        }
+
+        formCheck.appendChild(radio);
+        formCheck.appendChild(label);
+        cardBody.appendChild(formCheck);
+        card.appendChild(cardBody);
+        easyHardRowSelection.appendChild(card);
+        easyHardRadios.push(radio);
+      }
+
+      var row = document.createElement("div");
+      row.className = "row";
+      content.appendChild(row);
+      row.appendChild(sppRowSelection);
+      row.appendChild(easyHardRowSelection);
+
+      var sppRadios = document.getElementsByClassName("switchRadioSpp");
+      var easyHardRadios = document.getElementsByClassName("switchRadioEasyHard");
+
+      var sppIndex = 0;
+      var easyHardIndex = 0;
+      var gammaRIndex = 0;
+      sppRadios[0].checked = true;
+      easyHardRadios[0].checked = true;
+      for (var i = 0; i < sppRadios.length; i++) {
+        sppRadios[i].addEventListener('change', function () {
+          var imageBoxes = document.getElementsByClassName("imageBox");
+          for (var i = 0; i < imageBoxes.length; i++) {
+            imageBoxes[i].style = "display:none;";
+          }
+          // var radios = document.getElementsByClassName("switchRadioSpp");
+          // for (var i = 0; i < radios.length; i++)
+          // {
+          //   radios[i].checked = false;
+          // }
+          sppIndex = parseInt(this.value);
+          // radios[sppIndex].checked = true;
+
+          imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
+        })
+      }
+      for (var i = 0; i < easyHardRadios.length; i++) {
+        easyHardRadios[i].addEventListener('change', function () {
+          var imageBoxes = document.getElementsByClassName("imageBox");
+          for (var i = 0; i < imageBoxes.length; i++) {
+            imageBoxes[i].style = "display:none;";
+          }
+
+          easyHardIndex = parseInt(this.value);
+
+          imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
+        })
+      }
+
+      var gammaRRowSelection = document.createElement("div");
+      gammaRRowSelection.className = "col";
+
+      var tonemappingTitle = document.createElement('h3');
+      tonemappingTitle.textContent = "Tonemapping";
+      tonemappingTitle.style.textAlign = "center";
+      gammaRRowSelection.appendChild(tonemappingTitle);
+
+      var gammaRRadios = [];
+      for (let i = 0; i < 2; i++) {
+        let card = document.createElement('div');
+        card.className = "card";
+        let cardBody = document.createElement('div');
+        cardBody.className = "card-body";
+
+        let formCheck = document.createElement('div');
+        formCheck.className = "form-check";
+
+        let radio = document.createElement('input');
+        radio.className = "form-check-input switchGamma";
+        radio.type = 'radio';
+        radio.name = "difficulty222";
+        radio.id = "switchGamma" + i;
+        radio.value = i;
+
+        let label = document.createElement('label');
+        label.className = "form-check-label";
+        label.setAttribute("for", radio.id);
+        label.textContent = "Gamma";
+        if (i == 1) {
+          label.textContent = "Reinhard";
+        }
+
+        formCheck.appendChild(radio);
+        formCheck.appendChild(label);
+        cardBody.appendChild(formCheck);
+        card.appendChild(cardBody);
+        gammaRRowSelection.appendChild(card);
+        gammaRRadios.push(radio);
+      }
+      gammaRRadios[0].checked = true;
+
+      for (var i = 0; i < gammaRRadios.length; i++) {
+        gammaRRadios[i].addEventListener('change', function () {
+          var imageBoxes = document.getElementsByClassName("imageBox");
+          for (var i = 0; i < imageBoxes.length; i++) {
+            imageBoxes[i].style = "display:none;";
+          }
+
+          gammaRIndex = parseInt(this.value);
+
+          imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
+        })
+      }
+
+      row.appendChild(gammaRRowSelection);
+
+      var spps = [
+      ];
+
+
+      for (let i = 0; i < 12; i++) {
+        let imageDiv = document.createElement('div');
+        imageDiv.style = "display:none;";
+        imageDiv.className = "imageBox";
+        content.appendChild(imageDiv);
+        spps[i] = imageDiv;
+      }
+
+
+      resetButtonWheelZoom = document.createElement('button');
+      resetButtonWheelZoom.appendChild(document.createTextNode("Reset!"));
+      content.appendChild(resetButtonWheelZoom);
+      resetButtonWheelZoom.onclick = function () {
+        var imgs = document.getElementsByClassName('image-display');
+        const event = new Event('wheelzoom.reset');
+        for (let i = 0; i < imgs.length; i++) {
+          imgs[i].dispatchEvent(event);
+        }
+      };
+
+      // prev
+      // new ImageBox(spps[0], e4spp_data['images'] )
+      // spps[0].style = "display:block;";
+      // new ImageBox(spps[1], e16spp_data['images'] )
+      // new ImageBox(spps[2], e64spp_data['images'] )
+      // new ImageBox(spps[3], h4spp_data['images'] )
+      // new ImageBox(spps[4], h16spp_data['images'] )
+      // new ImageBox(spps[5], h64spp_data['images'] )    
+
+      new ImageBox(spps[0], e4_gamma_spp_data['images'])
+      spps[0].style = "display:block;";
+      new ImageBox(spps[1], e16_gamma_spp_data['images'])
+      new ImageBox(spps[2], e64_gamma_spp_data['images'])
+      new ImageBox(spps[3], h4_gamma_spp_data['images'])
+      new ImageBox(spps[4], h16_gamma_spp_data['images'])
+      new ImageBox(spps[5], h64_gamma_spp_data['images'])
+
+      new ImageBox(spps[6], e4_reinhard_spp_data['images'])
+      new ImageBox(spps[7], e16_reinhard_spp_data['images'])
+      new ImageBox(spps[8], e64_reinhard_spp_data['images'])
+      new ImageBox(spps[9], h4_reinhard_spp_data['images'])
+      new ImageBox(spps[10], h16_reinhard_spp_data['images'])
+      new ImageBox(spps[11], h64_reinhard_spp_data['images'])
+
+
+
+    }
+
+  </script>
 </head>
+
 <body onload="setup();">
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -538,23 +530,23 @@
 
   </div>
 </nav> -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Denoising Monte Carlo Renders With Diffusion
-            Models</h1>
-          <div class="is-size-5 publication-authors">
-            <!-- <span class="author-block">Vaibhav Vavilala<sup>1</sup>,</span>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Denoising Monte Carlo Renders With Diffusion
+              Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- <span class="author-block">Vaibhav Vavilala<sup>1</sup>,</span>
             <span class="author-block">Rahul Vasanth<sup>1</sup>,</span>
             <span class="author-block">David Forsyth<sup>1</sup></span> -->
-           
-            <span class="author-block">Anonymous Author<sup>1</sup>,</span>
-            <span class="author-block">Anonymous Author<sup>1</sup>,</span>
-            <span class="author-block">Anonymous Author<sup>1</sup></span>
 
-            <!-- <span class="author-block">
+              <span class="author-block">Anonymous Author<sup>1</sup>,</span>
+              <span class="author-block">Anonymous Author<sup>1</sup>,</span>
+              <span class="author-block">Anonymous Author<sup>1</sup></span>
+
+              <!-- <span class="author-block">
               <a href="https://keunhong.com">Vaibhav Vavilala</a><sup>1</sup>,</span>
             <span class="author-block">
               <a href="https://utkarshsinha.com">Rahul Vasanth</a><sup>1</sup>,</span>
@@ -562,18 +554,18 @@
               <a href="https://jonbarron.info">David Forsyth</a><sup>1</sup>,
             </span> -->
 
-          </div>
+            </div>
 
-          <div class="is-size-5 publication-authors">
-            <!-- <span class="author-block"><sup>1</sup>University of Illinois at Urbana-Champaign</span> -->
-            <span class="author-block"><sup>1</sup>Anonymous Institution</span>
-            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
-          </div>
+            <div class="is-size-5 publication-authors">
+              <!-- <span class="author-block"><sup>1</sup>University of Illinois at Urbana-Champaign</span> -->
+              <span class="author-block"><sup>1</sup>Anonymous Institution</span>
+              <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+            </div>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <!-- <span class="link-block">
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2404.00491.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -583,17 +575,16 @@
                 </a>
               </span> -->
 
-              <span class="link-block">
-                <a href="https://arxiv.org/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                <span class="link-block">
+                  <a href="https://arxiv.org/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fa fa-file-pdf-o"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
 
-              <!-- <span class="link-block">
+                <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2404.00491"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -603,18 +594,17 @@
                 </a>
               </span>
                -->
-              <span class="link-block">
-                <a href="https://arxiv.org/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                <span class="link-block">
+                  <a href="https://arxiv.org/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              
-              <!-- can add video later if needed -->
-              <!-- Video Link.
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- can add video later if needed -->
+                <!-- Video Link.
               <span class="link-block">
                 <a href="https://www.youtube.com/"
                    class="external-link button is-normal is-rounded is-dark">
@@ -624,19 +614,18 @@
                   <span>Video</span>
                 </a>
               </span> -->
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fa fa-github"></i>
-                  </span>
-                  <span>Code</span>
+                    </span>
+                    <span>Code</span>
                   </a>
-              </span>
+                </span>
 
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
+                <!-- Dataset Link. -->
+                <!-- <span class="link-block">
                 <a href="https://github.com/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -644,16 +633,16 @@
                   </span>
                   <span>Data</span>
                   </a> -->
-            </div>
+              </div>
 
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- <section class="section">
+  <!-- <section class="section">
   <div class="container is-max-desktop">
     <object data="path/to/teaser.pdf" type="application/pdf" width="100%" height="500px">
       <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="path/to/teaser.pdf">Download PDF</a>.</p>
@@ -661,7 +650,7 @@
   </div>
 </section> -->
 
-<!-- <section class="section">
+  <!-- <section class="section">
   <div class="container is-max-desktop">
     <object data="teaser.pdf" type="application/pdf" width="100%" height="500px">
       <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="path/to/teaser.pdf">Download PDF</a>.</p>
@@ -670,60 +659,71 @@
 </section>
  -->
 
- <section class="section">
-  <div class="container is-max-desktop">
+  <section class="section">
+    <div class="container is-max-desktop">
       <!-- Image link to the PDF document -->
       <a href="teaser.pdf" target="_blank">
-        <img src="teaser.jpg" alt="Denoising Monte Carlo Renders with Diffusion Models" style="width:100%; height:auto; margin: 0 auto;">
-    </a>
-  </div>
-</section>
+        <img src="teaser.jpg" alt="Denoising Monte Carlo Renders with Diffusion Models"
+          style="width:100%; height:auto; margin: 0 auto;">
+      </a>
+    </div>
+  </section>
 
 
- <section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Physically-based renderings contain Monte-Carlo noise, with variance that increases as the number of rays per pixel
-decreases. This noise, while zero-mean for good modern renderers, can have heavy tails (most notably, for scenes containing specular
-or refractive objects). Learned methods for restoring low fidelity renders are highly developed, because suppressing render noise
-means one can save compute and use fast renders with few rays per pixel. We demonstrate that a diffusion model can denoise low
-fidelity renders successfully. Furthermore, our method can be conditioned on a variety of natural render information, and this
-conditioning helps performance. Quantitative experiments show that our method is competitive with SOTA across a range of sampling
-rates, but current metrics slightly favor competitor methods. Qualitative examination of the reconstructions suggests that the metrics
-themselves may not be reliable. The image prior applied by a diffusion method strongly favors reconstructions that are “like” real
-images – so have straight shadow boundaries, curved specularities, no “fireflies” and the like – and metrics do not account for this. We
-show numerous examples where methods preferred by current metrics produce qualitatively weaker reconstructions than ours.
-          </p>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Physically-based renderings contain Monte-Carlo noise, with variance that increases as the number of rays
+              per pixel
+              decreases. This noise, while zero-mean for good modern renderers, can have heavy tails (most notably, for
+              scenes containing specular
+              or refractive objects). Learned methods for restoring low fidelity renders are highly developed, because
+              suppressing render noise
+              means one can save compute and use fast renders with few rays per pixel. We demonstrate that a diffusion
+              model can denoise low
+              fidelity renders successfully. Furthermore, our method can be conditioned on a variety of natural render
+              information, and this
+              conditioning helps performance. Quantitative experiments show that our method is competitive with SOTA
+              across a range of sampling
+              rates, but current metrics slightly favor competitor methods. Qualitative examination of the
+              reconstructions suggests that the metrics
+              themselves may not be reliable. The image prior applied by a diffusion method strongly favors
+              reconstructions that are “like” real
+              images – so have straight shadow boundaries, curved specularities, no “fireflies” and the like – and
+              metrics do not account for this. We
+              show numerous examples where methods preferred by current metrics produce qualitatively weaker
+              reconstructions than ours.
+            </p>
+          </div>
         </div>
       </div>
+      <!--/ Abstract. -->
     </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
+  </section>
 
-<div class="container">
-  <div class="col-12 text-center">
+  <div class="container">
+    <div class="col-12 text-center">
       <p class="text-danger">
       </p>
       <!-- <a class="btn btn-primary" href="index.html" role="button">Home</a> -->
+    </div>
+
+    <div class="content" id="content"></div>
   </div>
 
-  <div class="content" id="content"></div>
-</div>
-
-<!-- <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+  <!-- <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
   <img-comparison-slider>
       <img class="img1" slot="first" src="https://www.quotemaster.org/images/s_04/042899ecdc3b06325dc82889637f16f7.jpg" width="300" height="200">
       <img class="img2" slot="second" src="https://www.quotemaster.org/images/s_02/02ec034f07a92ddfa1d658b6ebe42304.png" width="300" height="200">
   </img-comparison-slider>
 </div> -->
 
-<!-- 
+  <!-- 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -740,10 +740,10 @@ show numerous examples where methods preferred by current metrics produce qualit
 </section>
  -->
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><cde>@misc{anon2024denoising,
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><cde>@misc{anon2024denoising,
   title={Denoising Monte Carlo Renders With Diffusion Models}, 
   author={Anonymous Authors},
   year={2024},
@@ -752,11 +752,11 @@ show numerous examples where methods preferred by current metrics produce qualit
   primaryClass={cs.CV}
 }
 </code></pre>
-  </div>
-</section>
+    </div>
+  </section>
 
 
-<!-- <footer class="footer">
+  <!-- <footer class="footer">
   <div class="container is-max-desktop content">
     <div class="content has-text-centered">
       <a class="icon-link"
@@ -787,38 +787,39 @@ show numerous examples where methods preferred by current metrics produce qualit
   </div>
 </footer> -->
 
-<footer class="footer">
-  <div class="container is-max-desktop content">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="https://arxiv.org/">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/rv-eng" class="external-link" disabled>
-        <i class="fa fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-             
-            Webpage and Image Viewer designed by <a href = "https://github.com/rv-eng"> Anonymous Author</a>. Special thanks to <a href="https://github.com/"> Anonymous </a> for their invaluable assistance. Base website obtained from template provided by <a
-            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-            
-          </p>
+  <footer class="footer">
+    <div class="container is-max-desktop content">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/rv-eng" class="external-link" disabled>
+          <i class="fa fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+
+              Webpage and Image Viewer designed by <a href="https://github.com/rv-eng"> Anonymous Author</a>. Special
+              thanks to <a href="https://github.com/"> Anonymous </a> for their invaluable assistance. Base website
+              obtained from template provided by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 
 </body>
+
 </html>
