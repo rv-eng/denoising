@@ -363,6 +363,9 @@
           // radios[sppIndex].checked = true;
 
           imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
+          for (var i = 0; i < imageBoxes.length; i++) {
+            imageBoxesObj[i].showContent(0, gIdx);
+          }
         })
       }
       for (var i = 0; i < easyHardRadios.length; i++) {
@@ -375,6 +378,9 @@
           easyHardIndex = parseInt(this.value);
 
           imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
+          for (var i = 0; i < imageBoxes.length; i++) {
+            imageBoxesObj[i].showContent(0, gIdx);
+          }
         })
       }
 
@@ -430,6 +436,9 @@
           gammaRIndex = parseInt(this.value);
 
           imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
+          for (var i = 0; i < imageBoxes.length; i++) {
+            imageBoxesObj[i].showContent(0, gIdx);
+          }
         })
       }
 
@@ -467,22 +476,22 @@
       // new ImageBox(spps[3], h4spp_data['images'] )
       // new ImageBox(spps[4], h16spp_data['images'] )
       // new ImageBox(spps[5], h64spp_data['images'] )    
+      var imageBoxesObj = [];
 
-      new ImageBox(spps[0], e4_gamma_spp_data['images'])
+      imageBoxesObj.push(new ImageBox(spps[0], e4_gamma_spp_data['images']))
       spps[0].style = "display:block;";
-      new ImageBox(spps[1], e16_gamma_spp_data['images'])
-      new ImageBox(spps[2], e64_gamma_spp_data['images'])
-      new ImageBox(spps[3], h4_gamma_spp_data['images'])
-      new ImageBox(spps[4], h16_gamma_spp_data['images'])
-      new ImageBox(spps[5], h64_gamma_spp_data['images'])
+      imageBoxesObj.push(new ImageBox(spps[1], e16_gamma_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[2], e64_gamma_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[3], h4_gamma_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[4], h16_gamma_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[5], h64_gamma_spp_data['images']))
 
-      new ImageBox(spps[6], e4_reinhard_spp_data['images'])
-      new ImageBox(spps[7], e16_reinhard_spp_data['images'])
-      new ImageBox(spps[8], e64_reinhard_spp_data['images'])
-      new ImageBox(spps[9], h4_reinhard_spp_data['images'])
-      new ImageBox(spps[10], h16_reinhard_spp_data['images'])
-      new ImageBox(spps[11], h64_reinhard_spp_data['images'])
-
+      imageBoxesObj.push(new ImageBox(spps[6], e4_reinhard_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[7], e16_reinhard_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[8], e64_reinhard_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[9], h4_reinhard_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[10], h16_reinhard_spp_data['images']))
+      imageBoxesObj.push(new ImageBox(spps[11], h64_reinhard_spp_data['images']))
 
 
     }
@@ -542,9 +551,9 @@
             <span class="author-block">Rahul Vasanth<sup>1</sup>,</span>
             <span class="author-block">David Forsyth<sup>1</sup></span> -->
 
-              <span class="author-block">Anonymous Author<sup>1</sup>,</span>
-              <span class="author-block">Anonymous Author<sup>1</sup>,</span>
-              <span class="author-block">Anonymous Author<sup>1</sup></span>
+              <span class="author-block">Anonymous Authors<sup>1</sup></span>
+              <!-- <span class="author-block">Anonymous Author<sup>1</sup>,</span>
+              <span class="author-block">Anonymous Author<sup>1</sup></span> -->
 
               <!-- <span class="author-block">
               <a href="https://keunhong.com">Vaibhav Vavilala</a><sup>1</sup>,</span>
@@ -739,7 +748,7 @@
   </div>
 </section>
  -->
-
+<!-- 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
@@ -753,7 +762,7 @@
 }
 </code></pre>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- <footer class="footer">

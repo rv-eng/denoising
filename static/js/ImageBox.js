@@ -385,6 +385,8 @@ ImageBox.prototype.lazyLoadImages = function() {
     });
 };
 
+var gIdx;
+
 ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
 
     var self = this;
@@ -430,6 +432,8 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
 
         selector.addEventListener("click", function(l, idx, event) {
             this.showContent(l, idx);
+            gIdx = idx;
+            // console.log('wtf, ', idx, gIdx, l);
         }.bind(this, level, i));
 
         // Add to tabs
