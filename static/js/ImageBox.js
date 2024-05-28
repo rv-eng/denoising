@@ -455,7 +455,7 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
         } else {
             content = document.createElement('img');
             content.className = "image-display pixelated";
-            content.setAttribute('data-src', config[i].image);
+            content.setAttribute('src', config[i].image);
             content.className += " lazy-load";
             content.slot = "first";
 
