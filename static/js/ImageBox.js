@@ -455,7 +455,7 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
         } else {
             content = document.createElement('img');
             content.className = "image-display pixelated";
-            content.setAttribute('src', config[i].image);
+            content.setAttribute('data-src', config[i].image);
             content.className += " lazy-load";
             content.slot = "first";
 
@@ -558,7 +558,6 @@ ImageBox.prototype.buildTreeNode = function(config, level, nodeList, parent) {
             }
 
             this.selection.length = Math.max(this.selection.length, level+1);
-
         }
         content.style.display = 'none';
         if (imageDiv !== null)

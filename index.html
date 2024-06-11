@@ -343,11 +343,11 @@
       var sppRadios = document.getElementsByClassName("switchRadioSpp");
       var easyHardRadios = document.getElementsByClassName("switchRadioEasyHard");
 
-      var sppIndex = 0;
-      var easyHardIndex = 0;
+      var sppIndex = 59;
+      var easyHardIndex = 1;
       var gammaRIndex = 0;
-      sppRadios[0].checked = true;
-      easyHardRadios[0].checked = true;
+      sppRadios[2].checked = true;
+      easyHardRadios[1].checked = true;
       for (var i = 0; i < sppRadios.length; i++) {
         sppRadios[i].addEventListener('change', function () {
           var imageBoxes = document.getElementsByClassName("imageBox");
@@ -479,7 +479,6 @@
       var imageBoxesObj = [];
 
       imageBoxesObj.push(new ImageBox(spps[0], e4_gamma_spp_data['images']))
-      spps[0].style = "display:block;";
       imageBoxesObj.push(new ImageBox(spps[1], e16_gamma_spp_data['images']))
       imageBoxesObj.push(new ImageBox(spps[2], e64_gamma_spp_data['images']))
       imageBoxesObj.push(new ImageBox(spps[3], h4_gamma_spp_data['images']))
@@ -492,8 +491,24 @@
       imageBoxesObj.push(new ImageBox(spps[9], h4_reinhard_spp_data['images']))
       imageBoxesObj.push(new ImageBox(spps[10], h16_reinhard_spp_data['images']))
       imageBoxesObj.push(new ImageBox(spps[11], h64_reinhard_spp_data['images']))
-
-
+      spps[5].style = "display:block;";
+      imageBoxesObj[5].showContent(0, 59);
+      imageBoxesObj[5].showContent(1, 3);
+      // setTimeout(function(){
+      //   var e = new Event("change");
+      //   easyHardRadios[1].dispatchEvent(e);
+      // }, 2000);
+      // var e = new Event("change");
+      // easyHardRadios[1].dispatchEvent(e);
+      // var imageBoxes = document.getElementsByClassName("imageBox");
+      // console.log("F", imageBoxes.length, sppIndex, easyHardIndex, gammaRIndex);
+      // for (var i = 0; i < imageBoxes.length; i++) {
+      //   imageBoxes[i].style = "display:none;";
+      // }
+      // imageBoxes[sppIndex + (easyHardIndex * 3) + (gammaRIndex * 6)].style = 'display:block;';
+      // for (var i = 0; i < imageBoxes.length; i++) {
+      //   imageBoxesObj[i].showContent(0, gIdx);
+      // }
     }
 
   </script>
