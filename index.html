@@ -343,7 +343,7 @@
       var sppRadios = document.getElementsByClassName("switchRadioSpp");
       var easyHardRadios = document.getElementsByClassName("switchRadioEasyHard");
 
-      var sppIndex = 59;
+      var sppIndex = 46;
       var easyHardIndex = 1;
       var gammaRIndex = 0;
       sppRadios[2].checked = true;
@@ -444,8 +444,7 @@
 
       row.appendChild(gammaRRowSelection);
 
-      var spps = [
-      ];
+      var spps = [];
 
 
       for (let i = 0; i < 12; i++) {
@@ -491,9 +490,15 @@
       imageBoxesObj.push(new ImageBox(spps[9], h4_reinhard_spp_data['images']))
       imageBoxesObj.push(new ImageBox(spps[10], h16_reinhard_spp_data['images']))
       imageBoxesObj.push(new ImageBox(spps[11], h64_reinhard_spp_data['images']))
+
       spps[5].style = "display:block;";
-      imageBoxesObj[5].showContent(0, 59);
+      imageBoxesObj[5].showContent(0, 46);
       imageBoxesObj[5].showContent(1, 3);
+
+      // // displays 16spp images but 64spp appears to be toggled
+      // spps[4].style = "display:block;";
+      // imageBoxesObj[4].showContent(0, 46);
+      // imageBoxesObj[4].showContent(1, 3);
       // setTimeout(function(){
       //   var e = new Event("change");
       //   easyHardRadios[1].dispatchEvent(e);
